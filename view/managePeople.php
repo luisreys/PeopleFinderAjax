@@ -8,18 +8,18 @@
                    <div class="form-inline">
                      <div class="form-group">
                        <label for="id">ID: </label>
-                       <input type="text" name="id" value="" class="form-control input" required>
+                       <input type="text" id="id" value="" class="form-control input" required>
                      </div>
                      <div class="form-group">
                        <label for="fname">Name: </label>
-                       <input type="text" name="fname" value="" class="form-control input" required>
+                       <input type="text" id="fname" value="" class="form-control input" required>
                      </div>
                      <div class="form-group">
                        <label for="sname">Lastname: </label>
-                       <input type="text" name="sname" value="" class="form-control input" required>
+                       <input type="text" id="sname" value="" class="form-control input" required>
                      </div>
-                     <input type="hidden" name="edit_form">
-                     <button type="button" name="button" class="btn btn-primary" onclick="">Edit</button>
+                     <input type="hidden" id="edit_form">
+                     <button type="button" name="button" class="btn btn-primary" onclick="updatePrsAjax();">Edit</button>
                    </div>
                    <br>
                </div>

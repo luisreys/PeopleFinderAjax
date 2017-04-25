@@ -1,5 +1,8 @@
 <?php
   include_once '../model/db.php';
+  include_once '../controller/user.php';
+
+  
 
   include '../view/userSearchView.php';
 

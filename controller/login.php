@@ -1,4 +1,5 @@
 <?php
+include_once '../controller/user.php';
 include_once "../model/db.php";
   $username = $_POST['user'];
   $password = $_POST['pass'];
@@ -21,9 +22,10 @@ include_once "../model/db.php";
       $_SESSION["pri"] = $loginReturn["pri"];
       $_SESSION["id"] = $loginReturn["id"];
       $_SESSION["description"] = $loginReturn["description"];
+
       return 0;
       break;
   }
 
-  header("Location: ../index.php"); //Revisar
+  header("Location: ../index.php"); //Check it
  ?>
