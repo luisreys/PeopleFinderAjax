@@ -78,6 +78,34 @@ function sendLogin(){
       xhttp.send();
   }
 
+  function sendUserSearch(){
+    xhttp = new XMLHttpRequest();
+
+    var searchbox = document.getElementById('searchbox').value;
+
+    xhttp.onreadystatechange = function(){
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById('mainDiv').innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", "view/userView.php?searchbox=" + searchbox, true);
+    xhttp.send();
+  }
+
+  function showAllAjax(){
+    xhttp = new XMLHttpRequest();
+
+    var searchbox = document.getElementById('searchbox').value;
+
+    xhttp.onreadystatechange = function(){
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById('mainDiv').innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", "view/userView.php", true);
+    xhttp.send();
+  }
+
   function logoutAjax(){
     xhttp = new XMLHttpRequest();
 
@@ -90,3 +118,23 @@ function sendLogin(){
     xhttp.open("GET", "controller/logout.php", true);
     xhttp.send();
   }
+
+
+/*
+*   People Management for normal Users
+*     - updatePrsAjax
+*     - addPrsAjax
+*     - deletePrsAjax
+*/
+
+function updatePrsAjax(){
+  xhttp = new XMLHttpRequest();
+
+  xhttp.onreadystatechange = function(){
+    if (this.readyState == 4 && this.status == 200) {
+      loadUserScreen();
+    }
+  };
+  xhttp.open("GET", "controller/controlPeople.php", true);
+  xhttp.send();
+}

@@ -16,8 +16,6 @@ include_once "../model/db.php";
       echo "Something was wrong! Error code -2.";
       break;
     default:
-      //echo "Login successfully! Welcome " . $username;
-      
       session_start();
       $_SESSION["username"] = $username;
       $_SESSION["pri"] = $loginReturn["pri"];

@@ -5,7 +5,7 @@
                <hr>
                <h2>Update person:</h2>
                <div class="text-left" class="myForm">
-                   <form class="form-inline" action="index.php" method="post" >
+                   <div class="form-inline">
                      <div class="form-group">
                        <label for="id">ID: </label>
                        <input type="text" name="id" value="" class="form-control input" required>
@@ -18,9 +18,9 @@
                        <label for="sname">Lastname: </label>
                        <input type="text" name="sname" value="" class="form-control input" required>
                      </div>
-                     <input type="hidden" name="edit_form"  >
-                     <input type="submit" class="btn btn-primary" name="" value="Edit">
-                   </form>
+                     <input type="hidden" name="edit_form">
+                     <button type="button" name="button" class="btn btn-primary" onclick="">Edit</button>
+                   </div>
                    <br>
                </div>
 

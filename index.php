@@ -23,7 +23,13 @@
                 <h2>Welcome </h2>
               </div>
               <div class="text-right col-md-6" id="loginLogout">
-                <span><a onclick="loginAjax();">Login.</a></span>
+                <?php
+                  if (isset($_SESSION['username'])) {
+                    echo '<span><a onclick="logoutAjax();">Logout.</a></span>';
+                  }else {
+                    echo '<span><a onclick="loginAjax();">Login.</a></span>';
+                  }
+                 ?>
               </div>
             </div>
           </div>
