@@ -145,9 +145,9 @@ function sendLogin(){
 function updatePrsAjax(){
   xhttp = new XMLHttpRequest();
   console.log("updatePrsAjax");
-  var id = document.getElementById("id").value;
-  var fname = document.getElementById("fname").value;
-  var sname = document.getElementById("sname").value;
+  var id = document.getElementById("idUpdate").value;
+  var fname = document.getElementById("fnameUpdate").value;
+  var sname = document.getElementById("snameUpdate").value;
   var edit_form = document.getElementById("edit_form").value;
 
   xhttp.onreadystatechange = function(){
@@ -161,5 +161,122 @@ function updatePrsAjax(){
     }
   };
   xhttp.open("GET", "controller/controlPeople.php?id=" + id + "&fname=" + fname + "&sname=" + sname + "&edit_form=" + edit_form, true);
+  xhttp.send();
+}
+
+function addPrsAjax(){
+  xhttp = new XMLHttpRequest();
+  console.log("addPrsAjax");
+  var id = document.getElementById("idAdd").value;
+  var fname = document.getElementById("fnameAdd").value;
+  var sname = document.getElementById("snameAdd").value;
+  var add_form = document.getElementById("add_form").value;
+
+  xhttp.onreadystatechange = function(){
+    if (this.readyState == 4 && this.status == 200) {
+      if (this.responseText == 0) {
+        console.log("addPrsAjax inside Success");
+        loadUserScreen();
+      }else {
+        document.getElementById('mainDiv').innerHTML = this.responseText;
+      }
+    }
+  };
+  xhttp.open("GET", "controller/controlPeople.php?id=" + id + "&fname=" + fname + "&sname=" + sname + "&add_form=" + add_form, true);
+  xhttp.send();
+}
+
+function deletePrsAjax(){
+  xhttp = new XMLHttpRequest();
+  console.log("addPrsAjax");
+  var id = document.getElementById("idDelete").value;
+  var delete_form = document.getElementById("delete_form").value;
+
+  xhttp.onreadystatechange = function(){
+    if (this.readyState == 4 && this.status == 200) {
+      if (this.responseText == 0) {
+        console.log("addPrsAjax inside Success");
+        loadUserScreen();
+      }else {
+        document.getElementById('mainDiv').innerHTML = this.responseText;
+      }
+    }
+  };
+  xhttp.open("GET", "controller/controlPeople.php?id=" + id + "&delete_form=" + delete_form, true);
+  xhttp.send();
+}
+
+
+/*
+*   People Management for Admin
+*     - updateUserAjax
+*     - addUserAjax
+*     - deleteUserAjax
+*/
+
+function updateUserAjax(){
+  xhttp = new XMLHttpRequest();
+
+  var userUpdateUser = document.getElementById("userUpdateUser").value;
+  var pwdUpdateUser = document.getElementById("pwdUpdateUser").value;
+  var priUpdateUser = document.getElementById("priUpdateUser").value;
+  var idUpdateUser = document.getElementById("idUpdateUser").value;
+  var descriptionUpdateUser = document.getElementById("descriptionUpdateUser").value;
+  var edit_form_user = document.getElementById("edit_form_user").value;
+  console.log("update user: " + userUpdateUser + pwdUpdateUser + priUpdateUser + idUpdateUser + descriptionUpdateUser);
+  xhttp.onreadystatechange = function(){
+    if (this.readyState == 4 && this.status == 200) {
+      if (this.responseText == 0) {
+        console.log("updatePrsAjax inside Success");
+        loadUserScreen();
+      }else {
+        document.getElementById('mainDiv').innerHTML = this.responseText;
+      }
+    }
+  };
+  xhttp.open("GET", "controller/controlUsers.php?userUpdateUser=" + userUpdateUser + "&pwdUpdateUser=" + pwdUpdateUser + "&priUpdateUser=" + priUpdateUser + "&idUpdateUser=" + idUpdateUser + "&descriptionUpdateUser=" + descriptionUpdateUser + "&edit_form_user=" + edit_form_user, true);
+  xhttp.send();
+}
+
+function addUserAjax(){
+  xhttp = new XMLHttpRequest();
+  var userUpdateUser = document.getElementById("userAddUser").value;
+  var pwdUpdateUser = document.getElementById("pwdAddUser").value;
+  var priUpdateUser = document.getElementById("priAddUser").value;
+  var idUpdateUser = document.getElementById("idAddUser").value;
+  var descriptionUpdateUser = document.getElementById("descriptionAddUser").value;
+  var add_form_user = document.getElementById("add_form_user").value;
+  console.log("add user: " + userUpdateUser + pwdUpdateUser + priUpdateUser + idUpdateUser + descriptionUpdateUser);
+  xhttp.onreadystatechange = function(){
+    if (this.readyState == 4 && this.status == 200) {
+      if (this.responseText == 0) {
+        console.log("addPrsAjax inside Success");
+        loadUserScreen();
+      }else {
+        document.getElementById('mainDiv').innerHTML = this.responseText;
+      }
+    }
+  };
+  xhttp.open("GET", "controller/controlUsers.php?userUpdateUser=" + userUpdateUser + "&pwdUpdateUser=" + pwdUpdateUser + "&priUpdateUser=" + priUpdateUser + "&idUpdateUser=" + idUpdateUser + "&descriptionUpdateUser=" + descriptionUpdateUser + "&add_form_user=" + add_form_user, true);
+  xhttp.send();
+}
+
+function deleteUserAjax(){
+  xhttp = new XMLHttpRequest();
+  var id = document.getElementById("idDeleteUser").value;
+  var delete_form_user = document.getElementById("delete_form_user").value;
+
+  console.log("deletePrsAjax:"+ id);
+  xhttp.onreadystatechange = function(){
+    if (this.readyState == 4 && this.status == 200) {
+      if (this.responseText == 0) {
+        console.log("addPrsAjax inside Success");
+        loadUserScreen();
+      }else {
+        document.getElementById('mainDiv').innerHTML = this.responseText;
+      }
+    }
+  };
+  xhttp.open("GET", "controller/controlUsers.php?id=" + id + "&delete_form_user=" + delete_form_user, true);
   xhttp.send();
 }
