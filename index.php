@@ -45,9 +45,19 @@
                   echo '<script type="text/javascript">searchAjax();</script>';
                 }
              ?>
-
           </div>
         </div>
       </div>
+      <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="closeModal();">&times;</span>
+    <br>
+    <p class="text-center text-success"><b>DONE!</b> Changes have been applied correctly.</p>
+  </div>
+
+</div>
   </body>
 </html>

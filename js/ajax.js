@@ -155,6 +155,7 @@ function updatePrsAjax(){
       if (this.responseText == 0) {
         console.log("updatePrsAjax inside Success");
         loadUserScreen();
+        loadModal();
       }else {
         document.getElementById('mainDiv').innerHTML = this.responseText;
       }
@@ -177,6 +178,7 @@ function addPrsAjax(){
       if (this.responseText == 0) {
         console.log("addPrsAjax inside Success");
         loadUserScreen();
+        loadModal();
       }else {
         document.getElementById('mainDiv').innerHTML = this.responseText;
       }
@@ -197,6 +199,7 @@ function deletePrsAjax(){
       if (this.responseText == 0) {
         console.log("addPrsAjax inside Success");
         loadUserScreen();
+        loadModal();
       }else {
         document.getElementById('mainDiv').innerHTML = this.responseText;
       }
@@ -229,6 +232,7 @@ function updateUserAjax(){
       if (this.responseText == 0) {
         console.log("updatePrsAjax inside Success");
         loadUserScreen();
+        loadModal();
       }else {
         document.getElementById('mainDiv').innerHTML = this.responseText;
       }
@@ -252,6 +256,7 @@ function addUserAjax(){
       if (this.responseText == 0) {
         console.log("addPrsAjax inside Success");
         loadUserScreen();
+        loadModal();
       }else {
         document.getElementById('mainDiv').innerHTML = this.responseText;
       }
@@ -272,6 +277,7 @@ function deleteUserAjax(){
       if (this.responseText == 0) {
         console.log("addPrsAjax inside Success");
         loadUserScreen();
+        loadModal();
       }else {
         document.getElementById('mainDiv').innerHTML = this.responseText;
       }
@@ -279,4 +285,24 @@ function deleteUserAjax(){
   };
   xhttp.open("GET", "controller/controlUsers.php?id=" + id + "&delete_form_user=" + delete_form_user, true);
   xhttp.send();
+}
+
+// Modal Message
+
+function loadModal(){
+  var modal = document.getElementById('myModal');
+  modal.style.display = "block";
+}
+
+function closeModal(){
+    var span = document.getElementsByClassName("close")[0];
+    var modal = document.getElementById('myModal');
+    modal.style.display = "none";
+}
+
+var modal = document.getElementById('myModal');
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }

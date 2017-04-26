@@ -7,15 +7,15 @@
        <div class="form-inline">
          <div class="form-group">
            <label for="idUpdate">ID: </label>
-           <input type="text" id="id" value="" class="form-control input" required>
+           <input type="text" id="idUpdate" value="" class="form-control input" required>
          </div>
          <div class="form-group">
            <label for="fnameUpdate">Name: </label>
-           <input type="text" id="fname" value="" class="form-control input" required>
+           <input type="text" id="fnameUpdate" value="" class="form-control input" required>
          </div>
          <div class="form-group">
            <label for="snameUpdate">Lastname: </label>
-           <input type="text" id="sname" value="" class="form-control input" required>
+           <input type="text" id="snameUpdate" value="" class="form-control input" required>
          </div>
          <input type="hidden" id="edit_form">
          <button type="button" name="button" class="btn btn-primary" onclick="updatePrsAjax();">Edit</button>
